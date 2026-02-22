@@ -1,111 +1,82 @@
-# Web Code Snippet Miner 💎
+# web-code-snippet-miner
 
-A high-compute scraping project that extracts, categorizes, and semantically indexes code snippets from across the web. Build a developer knowledge graph with intelligent search capabilities.
+## Detailed Description
 
-## 🎯 Project Overview
+web-code-snippet-miner is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-**Goal**: Create a comprehensive searchable database of code snippets from:
-- Stack Overflow and developer forums
-- GitHub Gists and READMEs
-- Technical blogs and documentation
-- Tutorial sites and code repositories
+## Problem Statement
 
-## 🏗️ Architecture
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                   Web Code Snippet Miner                     │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐   │
-│  │   Scraper   │  │  Parser &  │  │   Semantic      │   │
-│  │   Engine    │──▶│  Extractor │──▶│   Indexer       │   │
-│  └─────────────┘  └─────────────┘  └─────────────────┘   │
-│                   └─────────────┘  ┌─────────────────┐   │
-│  ┌─────────────┐  ┌─────────────┐  │   Search API   │   │
-│  │  Web Crawler│  │  Vector DB  │  │   (FastAPI)    │   │
-│  │  (Custom)  │  │ (Qdrant)   │  └─────────────────┘   │
-│  └─────────────┘  └─────────────┘                          │
-└─────────────────────────────────────────────────────────────┘
-```
 
-## 📊 Data Sources
+## Getting Started
 
-- **Stack Overflow**: Questions, answers, code blocks
-- **GitHub Gists**: Public gists and their code
-- **Dev.to & Hashnode**: Technical articles with code
-- **Medium & Blogs**: Developer tutorials
-- **Documentation**: Code examples from official docs
+### Prerequisites
 
-## 🔧 Tech Stack
+- Git
+- Project runtime/toolchain for this repo
 
-- **Language**: Python
-- **Scraping**: Playwright, Scrapy
-- **Code Parsing**: Tree-sitter, AST analysis
-- **Vector Store**: Qdrant / Pinecone
-- **Embeddings**: CodeBERT, UnixCoder
-- **API**: FastAPI
-- **Queue**: Redis + Celery
-
-## 🚀 Getting Started
+### Local Setup
 
 ```bash
-# Clone the repo
-git clone https://github.com/yksanjo/web-code-snippet-miner.git
-cd web-code-snippet-miner
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment
-cp .env.example .env
-
-# Run the miner
-python src/miner/stackoverflow_miner.py
-
-# Start search API
-uvicorn src.api.main:app --reload
+make test
+make lint
 ```
 
-## 📈 Features
+## Usage
 
-- [ ] Multi-source web scraping
-- [ ] Code block extraction and parsing
-- [ ] Language detection (50+ languages)
-- [ ] Semantic embeddings generation
-- [ ] Similarity search
-- [ ] Code deduplication
-- [ ] Usage analytics
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-## 📊 Project Phases
+## Quality Standards
 
-### Phase 1: Source Collection
-- Stack Overflow scraper
-- GitHub Gists miner
-- Blog aggregator
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-### Phase 2: Extraction Pipeline
-- Code block detection
-- Language identification
-- AST-based normalization
+## Security
 
-### Phase 3: Semantic Indexing
-- Code embeddings
-- Vector storage
-- Similarity search
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-### Phase 4: API & UI
-- REST API
-- Search interface
-- Usage analytics
+## Contributing
 
-## 📝 License
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-MIT License - See [LICENSE](LICENSE) for details.
+## Roadmap
 
-## 👤 Author
+Track upcoming milestones, technical debt, and planned feature work.
 
-Yoshi Kondo - [@yksanjo](https://github.com/yksanjo)
+## Support
 
----
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
-🔍 Search smarter with mined code snippets!
+## License
+
+This project is released under the MIT License.
